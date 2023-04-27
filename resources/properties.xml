@@ -1,0 +1,27 @@
+<resources>
+
+    <properties>
+        <property id="VERSION_ID" type="string">1.0.0</property>
+        <property id="WINDOW" type="number">30</property>
+        <property id="LAP_RESET" type="boolean">false</property>
+    </properties>
+
+    <strings>
+        <string id="VERSION_ID_TITLE">App version</string>
+        <string id="WINDOW_TITLE">Rolling window duration (seconds)</string>
+        <string id="LAP_RESET_TITLE">Reset pace on lap</string>
+    </strings>
+
+    <settings>
+        <setting propertyKey="@Properties.VERSION_ID" title="@Strings.VERSION_ID_TITLE">
+            <settingConfig type="alphaNumeric" readonly="true" />
+        </setting>
+        <setting propertyKey="@Properties.WINDOW" title="@Strings.WINDOW_TITLE">
+            <settingConfig type="numeric" min="15" max="120" />
+        </setting>
+        <setting propertyKey="@Properties.LAP_RESET" title="@Strings.LAP_RESET_TITLE">
+            <settingConfig type="boolean" />
+        </setting>
+    </settings>
+
+</resources>

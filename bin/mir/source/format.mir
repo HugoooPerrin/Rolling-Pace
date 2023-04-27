@@ -1,0 +1,92 @@
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/format.mc"; @line = 1; ]
+import Toybox.Math;
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/format.mc"; @line = 3; @position = 4; ]
+var pace;
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/format.mc"; @line = 4; @position = 4; ]
+var mins;
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/format.mc"; @line = 5; @position = 4; ]
+var secs;
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/format.mc"; @line = 7; ]
+function to_pace(speed) {
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_7_24_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 10 4 ]
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_4_if_stmt:
+    %tmp.2 = lgetv %speed;
+    %tmp.3 = 0.07;
+    %tmp.4 = gt %tmp.2 %tmp.3;
+    bf %tmp.4 @_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_4_if_false;
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_4_if_true:
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_22_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 13 8 ]
+    %tmp.5 = 60.0;
+    %tmp.7 = lgetv %speed;
+    %tmp.8 = 3.6;
+    %tmp.9 = mul %tmp.7 %tmp.8;
+    %tmp.10 = div %tmp.5 %tmp.9;
+    putv self :pace %tmp.10;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 14 8 ]
+    %tmp.11 = getm $.Toybox.Math;
+    %tmp.12 = getv function %tmp.11 :floor;
+    %tmp.14 = getv ? :pace;
+    %tmp.15 = invoke %tmp.11 %tmp.12(%tmp.14);
+    %tmp.16 = getv function %tmp.15 :toNumber;
+    %tmp.17 = invoke %tmp.15 %tmp.16();
+    putv self :mins %tmp.17;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 15 8 ]
+    %tmp.18 = getm $.Toybox.Math;
+    %tmp.19 = getv function %tmp.18 :round;
+    %tmp.21 = getv ? :pace;
+    %tmp.23 = getv ? :mins;
+    %tmp.24 = sub %tmp.21 %tmp.23;
+    %tmp.25 = 60;
+    %tmp.26 = mul %tmp.24 %tmp.25;
+    %tmp.27 = invoke %tmp.18 %tmp.19(%tmp.26);
+    putv self :secs %tmp.27;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 18 8 ]
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_18_8_if_stmt:
+    %tmp.29 = getv ? :secs;
+    %tmp.30 = 60;
+    %tmp.31 = eq %tmp.29 %tmp.30;
+    bf %tmp.31 @_home_hugo_Bureau_Garmin_rollingS_source_format_mc_18_8_if_end;
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_18_8_if_true:
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_18_24_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 19 12 ]
+    %tmp.32 = getv self :mins;
+    %tmp.33 = 1;
+    %tmp.34 = add %tmp.32 %tmp.33;
+    putv self :mins dup %tmp.34;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 20 12 ]
+    %tmp.35 = 0;
+    putv self :secs %tmp.35;
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_18_24_stop:
+    goto @_home_hugo_Bureau_Garmin_rollingS_source_format_mc_18_8_if_end;
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_18_8_if_end:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 23 8 ]
+    %tmp.36 = newa 2;
+    %tmp.38 = getv ? :mins;
+    %tmp.39 = dup %tmp.36;
+    %tmp.40 = aputv %tmp.39 0 %tmp.38;
+    %tmp.42 = getv ? :secs;
+    %tmp.43 = dup %tmp.40;
+    %tmp.44 = aputv %tmp.43 1 %tmp.42;
+    ret %tmp.44;
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_22_stop:
+    goto @_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_4_if_end;
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_4_if_false:
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_24_11_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/format.mc" 25 8 ]
+    %tmp.45 = newa 2;
+    %tmp.46 = 0;
+    %tmp.47 = dup %tmp.45;
+    %tmp.48 = aputv %tmp.47 0 %tmp.46;
+    %tmp.49 = 0;
+    %tmp.50 = dup %tmp.48;
+    %tmp.51 = aputv %tmp.50 1 %tmp.49;
+    ret %tmp.51;
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_24_11_stop:
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_10_4_if_end:
+_home_hugo_Bureau_Garmin_rollingS_source_format_mc_7_24_stop:
+}
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/format.mc"; @line = 1; ]
+<init> {
+}

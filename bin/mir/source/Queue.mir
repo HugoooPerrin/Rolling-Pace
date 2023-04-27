@@ -1,0 +1,310 @@
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 1; ]
+import Toybox.Math;
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 4; ]
+class Queue{
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 7; @position = 8; ]
+    var length;
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 8; @position = 8; ]
+    var queue;
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 9; @position = 8; ]
+    var counter;
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 10; @position = 8; ]
+    var sum;
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 13; ]
+    function initialize(len) as Void {
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_13_29_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 14 8 ]
+        %tmp.2 = lgetv %len;
+        putv self :length %tmp.2;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 15 8 ]
+        %tmp.5 = lgetv %len;
+        %tmp.3 = newa %tmp.5;
+        putv self :queue %tmp.3;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_13_29_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 19; ]
+    function update(member) {
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_19_28_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 20 8 ]
+        for @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_test @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_incr @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_init:
+        [ "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_begin" "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_end" ]
+        %i.1 = local;
+        %tmp.1 = lgetv %self;
+        %tmp.2 = getv %tmp.1 :length;
+        %tmp.3 = 1;
+        %tmp.4 = sub %tmp.2 %tmp.3;
+        lputv %i.1 %tmp.4;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_test:
+        %tmp.6 = lgetv %i.1;
+        %tmp.7 = 0;
+        %tmp.8 = gt %tmp.6 %tmp.7;
+        bf %tmp.8 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_begin:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_48_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 21 12 ]
+        %tmp.9 = getv self :queue;
+        %tmp.10 = lgetv %self;
+        %tmp.11 = getv %tmp.10 :queue;
+        %tmp.13 = lgetv %i.1;
+        %tmp.14 = 1;
+        %tmp.15 = sub %tmp.13 %tmp.14;
+        %tmp.16 = agetv %tmp.11 %tmp.15;
+        %tmp.18 = lgetv %i.1;
+        aputv %tmp.9 %tmp.18 %tmp.16;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_48_stop:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_incr:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 20 ]
+        %tmp.21 = lgetv %i.1;
+        %tmp.22 = sub %tmp.21 1;
+        lputv %i.1 %tmp.22;
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_test;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_20_8_for_end:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 23 8 ]
+        %tmp.23 = getv self :queue;
+        %tmp.25 = lgetv %member;
+        %tmp.26 = 0;
+        aputv %tmp.23 %tmp.26 %tmp.25;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_19_28_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 27; ]
+    function mean() {
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_27_20_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 28 8 ]
+        %tmp.1 = 0;
+        putv self :counter %tmp.1;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 29 8 ]
+        %tmp.2 = 0.0;
+        putv self :sum %tmp.2;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 32 8 ]
+        for @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_test @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_incr @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_init:
+        [ "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_begin" "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_end" ]
+        %i.1 = local;
+        %tmp.3 = 0;
+        lputv %i.1 %tmp.3;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_test:
+        %tmp.5 = lgetv %i.1;
+        %tmp.6 = lgetv %self;
+        %tmp.7 = getv %tmp.6 :length;
+        %tmp.8 = lt %tmp.5 %tmp.7;
+        bf %tmp.8 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_begin:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_46_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 35 12 ]
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_35_12_if_stmt:
+        %tmp.9 = lgetv %self;
+        %tmp.10 = getv %tmp.9 :queue;
+        %tmp.12 = lgetv %i.1;
+        %tmp.13 = agetv %tmp.10 %tmp.12;
+        %tmp.14 = null;
+        %tmp.15 = eq %tmp.13 %tmp.14;
+        bf %tmp.15 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_35_12_if_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_35_12_if_true:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_35_39_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 36 16 ]
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_incr;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_35_39_stop:
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_35_12_if_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_35_12_if_end:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 39 12 ]
+        %tmp.16 = getv self :sum;
+        %tmp.17 = lgetv %self;
+        %tmp.18 = getv %tmp.17 :queue;
+        %tmp.20 = lgetv %i.1;
+        %tmp.21 = agetv %tmp.18 %tmp.20;
+        %tmp.22 = add %tmp.16 %tmp.21;
+        putv self :sum dup %tmp.22;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 40 12 ]
+        %tmp.25 = getv ? :counter;
+        %tmp.26 = add %tmp.25 1;
+        putv self :counter dup %tmp.26;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_46_stop:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_incr:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 32 ]
+        %tmp.29 = lgetv %i.1;
+        %tmp.30 = add %tmp.29 1;
+        lputv %i.1 %tmp.30;
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_test;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_32_8_for_end:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 44 8 ]
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_begin:
+        %tmp.32 = getv ? :counter;
+        %tmp.33 = 0;
+        %tmp.34 = ne %tmp.32 %tmp.33;
+        bf %tmp.34 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_false;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_true:
+        %tmp.36 = getv ? :sum;
+        %tmp.38 = getv ? :counter;
+        %tmp.39 = div %tmp.36 %tmp.38;
+        push %tmp.39;
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_false:
+        %tmp.40 = 0.0;
+        push %tmp.40;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_end:
+        %tmp.41 = phi [%tmp.34 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_begin] [%tmp.39 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_true] [%tmp.40 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_false] [%tmp.41 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_44_15_end];
+        ret %tmp.41;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_27_20_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 48; ]
+    function current(n) {
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_48_24_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 49 8 ]
+        %tmp.1 = getm $.Toybox.Math;
+        %tmp.2 = getv function %tmp.1 :mean;
+        %tmp.3 = lgetv %self;
+        %tmp.4 = getv %tmp.3 :queue;
+        %tmp.5 = getv function %tmp.4 :slice;
+        %tmp.6 = 0;
+        %tmp.8 = lgetv %n;
+        %tmp.9 = invoke %tmp.4 %tmp.5(%tmp.6, %tmp.8);
+        %tmp.10 = invoke %tmp.1 %tmp.2(%tmp.9);
+        ret %tmp.10;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_48_24_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 53; ]
+    function last(n) {
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_53_21_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 54 8 ]
+        for @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_test @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_incr @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_init:
+        [ "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_begin" "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_end" ]
+        %i.1 = local;
+        %tmp.1 = lgetv %self;
+        %tmp.2 = getv %tmp.1 :length;
+        %tmp.3 = 1;
+        %tmp.4 = sub %tmp.2 %tmp.3;
+        lputv %i.1 %tmp.4;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_test:
+        %tmp.6 = lgetv %i.1;
+        %tmp.8 = lgetv %n;
+        %tmp.9 = 1;
+        %tmp.10 = sub %tmp.8 %tmp.9;
+        %tmp.11 = gte %tmp.6 %tmp.10;
+        bf %tmp.11 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_begin:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_51_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 55 12 ]
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_12_if_stmt:
+        %tmp.12 = lgetv %self;
+        %tmp.13 = getv %tmp.12 :queue;
+        %tmp.15 = lgetv %i.1;
+        %tmp.16 = agetv %tmp.13 %tmp.15;
+        %tmp.17 = null;
+        %tmp.18 = ne %tmp.16 %tmp.17;
+        bf %tmp.18 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_12_if_false;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_12_if_true:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_39_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 56 16 ]
+        %tmp.19 = getm $.Toybox.Math;
+        %tmp.20 = getv function %tmp.19 :mean;
+        %tmp.21 = lgetv %self;
+        %tmp.22 = getv %tmp.21 :queue;
+        %tmp.23 = getv function %tmp.22 :slice;
+        %tmp.25 = lgetv %i.1;
+        %tmp.26 = 1;
+        %tmp.27 = add %tmp.25 %tmp.26;
+        %tmp.29 = lgetv %n;
+        %tmp.30 = sub %tmp.27 %tmp.29;
+        %tmp.32 = lgetv %i.1;
+        %tmp.33 = 1;
+        %tmp.34 = add %tmp.32 %tmp.33;
+        %tmp.35 = invoke %tmp.22 %tmp.23(%tmp.30, %tmp.34);
+        %tmp.36 = invoke %tmp.19 %tmp.20(%tmp.35);
+        ret %tmp.36;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_39_stop:
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_12_if_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_12_if_false:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_57_19_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 58 16 ]
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_incr;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_57_19_stop:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_55_12_if_end:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_51_stop:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_incr:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 54 ]
+        %tmp.39 = lgetv %i.1;
+        %tmp.40 = sub %tmp.39 1;
+        lputv %i.1 %tmp.40;
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_test;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_54_8_for_end:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 61 8 ]
+        %tmp.41 = null;
+        ret %tmp.41;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_53_21_stop:
+    }
+    [ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 65; ]
+    function count_not_null() {
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_65_30_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 66 8 ]
+        %tmp.1 = lgetv %self;
+        %tmp.2 = getv %tmp.1 :length;
+        putv self :counter %tmp.2;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 67 8 ]
+        for @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_test @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_incr @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_init:
+        [ "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_begin" "_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_end" ]
+        %i.1 = local;
+        %tmp.3 = lgetv %self;
+        %tmp.4 = getv %tmp.3 :length;
+        %tmp.5 = 1;
+        %tmp.6 = sub %tmp.4 %tmp.5;
+        lputv %i.1 %tmp.6;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_test:
+        %tmp.8 = lgetv %i.1;
+        %tmp.9 = 0;
+        %tmp.10 = gte %tmp.8 %tmp.9;
+        bf %tmp.10 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_begin:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_49_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 68 12 ]
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_12_if_stmt:
+        %tmp.11 = lgetv %self;
+        %tmp.12 = getv %tmp.11 :queue;
+        %tmp.14 = lgetv %i.1;
+        %tmp.15 = agetv %tmp.12 %tmp.14;
+        %tmp.16 = null;
+        %tmp.17 = ne %tmp.15 %tmp.16;
+        bf %tmp.17 @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_12_if_false;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_12_if_true:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_39_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 69 16 ]
+        %tmp.19 = getv ? :counter;
+        ret %tmp.19;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_39_stop:
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_12_if_end;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_12_if_false:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_70_19_start:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 71 16 ]
+        %tmp.22 = getv ? :counter;
+        %tmp.23 = sub %tmp.22 1;
+        putv self :counter dup %tmp.23;
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 72 16 ]
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_incr;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_70_19_stop:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_68_12_if_end:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_49_stop:
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_incr:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 67 ]
+        %tmp.26 = lgetv %i.1;
+        %tmp.27 = sub %tmp.26 1;
+        lputv %i.1 %tmp.27;
+        goto @_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_test;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_67_8_for_end:
+[ "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc" 75 8 ]
+        %tmp.28 = 0;
+        ret %tmp.28;
+_home_hugo_Bureau_Garmin_rollingS_source_Queue_mc_65_30_stop:
+    }
+}
+[ @file = "/home/hugo/Bureau/Garmin/rollingS/source/Queue.mc"; @line = 1; ]
+<init> {
+}
