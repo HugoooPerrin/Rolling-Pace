@@ -77,7 +77,7 @@ class RollingSView extends WatchUi.SimpleDataField {
             // Compute rolling mean 
             rolling_spd = speed.mean();
 
-            // DISPLAY VALUE
+            // Display value
             pace = to_pace(rolling_spd);
             val = Lang.format("$1$:$2$", [pace[0].format("%d"), pace[1].format("%02d")]);
 
